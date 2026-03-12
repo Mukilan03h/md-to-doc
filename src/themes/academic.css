@@ -1,0 +1,41 @@
+body {
+  font-family: "Times New Roman", Times, serif;
+  line-height: 2.0; /* Double-spaced */
+  color: #000;
+  font-size: 12pt;
+  margin: 1in;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  text-align: center;
+}
+h2, h3, h4 {
+  text-align: left;
+}
+p {
+  text-indent: 0.5in;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+}
+th {
+  border-top: 2px solid #000;
+  border-bottom: 1px solid #000;
+  padding: 8px;
+  text-align: left;
+}
+td {
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+}
+blockquote {
+  margin-left: 0.5in;
+  margin-right: 0.5in;
+}
+code {
+  font-family: "Courier New", Courier, monospace;
+}

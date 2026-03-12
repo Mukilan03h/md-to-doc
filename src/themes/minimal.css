@@ -1,0 +1,49 @@
+body {
+  font-family: -apple-system, system-ui, sans-serif;
+  line-height: 1.5;
+  color: #111;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+}
+h1, h2, h3, h4 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+a {
+  color: #000;
+  text-decoration: underline;
+  text-decoration-color: #999;
+}
+table {
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+th {
+  text-align: left;
+  border-bottom: 2px solid #333;
+  padding: 10px 0;
+}
+td {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+blockquote {
+  border-left: 2px solid #111;
+  margin-left: 0;
+  padding-left: 1em;
+  font-style: italic;
+}
+code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 0.9em;
+  padding: 2px 4px;
+  background-color: rgba(0,0,0,0.05);
+  border-radius: 3px;
+}

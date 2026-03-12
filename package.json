@@ -1,0 +1,60 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "jest",
+    "build:mac": "electron-builder --mac",
+    "build:win": "electron-builder --win",
+    "build:linux": "electron-builder --linux"
+  },
+  "build": {
+    "appId": "com.mdforge.app",
+    "productName": "MDForge",
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mukilan03h/md-to-doc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Mukilan03h/md-to-doc/issues"
+  },
+  "homepage": "https://github.com/Mukilan03h/md-to-doc#readme",
+  "dependencies": {
+    "chokidar": "^3.6.0",
+    "docx": "^9.6.1",
+    "electron-store": "^11.0.2",
+    "gray-matter": "^4.0.3",
+    "marked": "^9.1.6",
+    "mime-types": "^3.0.2",
+    "puppeteer-core": "^24.39.0"
+  },
+  "devDependencies": {
+    "electron": "^41.0.0",
+    "electron-builder": "^26.8.1",
+    "puppeteer": "^24.39.0"
+  }
+}
