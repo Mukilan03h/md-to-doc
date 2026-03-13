@@ -44,10 +44,7 @@ async function exportPdf(html, outputPath, theme, pageSize, electronAppPath, fon
   const browser = await puppeteer.launch({
     executablePath: electronAppPath,
     headless: "new", // use new headless mode
-    env: {
-      ...process.env,
-      ELECTRON_RUN_AS_NODE: '1' // Prevent spawning a full electron app window
-    }
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
 
   const page = await browser.newPage();

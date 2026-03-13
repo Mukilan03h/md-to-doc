@@ -16,7 +16,11 @@ contextBridge.exposeInMainWorld('api', {
   setSetting: (key, value) => ipcRenderer.invoke('settings:set', {key, value}),
 
   onFileChanged: (callback) => {
-    ipcRenderer.on('file:changed', (_event, filePath) => callback(filePath));
+    // In React, strict mode can mount/unmount and cause duplicate listeners
+    // We should probably return an unsubscribe function or handle it safely.
+    const listener = (_event, filePath) => callback(filePath);
+    ipcRenderer.on('file:changed', listener);
+    return () => ipcRenderer.removeListener('file:changed', listener);
   },
 
   showToast: (message) => ipcRenderer.send('toast:show', message)
