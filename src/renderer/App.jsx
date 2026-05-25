@@ -302,7 +302,11 @@ export default function App() {
               onClick={() => setActiveFileIndex(i)}
             >
               {f.name}{f.isDirty ? '*' : ''}
-              <button className="text-muted-foreground hover:text-foreground rounded-full p-0.5" onClick={(e) => {
+              <button
+                className="text-muted-foreground hover:text-foreground rounded-full p-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1"
+                aria-label={`Close ${f.name}`}
+                title={`Close ${f.name}`}
+                onClick={(e) => {
                 e.stopPropagation();
                 setFiles(prev => {
                   const next = [...prev];
