@@ -302,15 +302,19 @@ export default function App() {
               onClick={() => setActiveFileIndex(i)}
             >
               {f.name}{f.isDirty ? '*' : ''}
-              <button className="text-muted-foreground hover:text-foreground rounded-full p-0.5" onClick={(e) => {
-                e.stopPropagation();
-                setFiles(prev => {
-                  const next = [...prev];
-                  next.splice(i, 1);
-                  if (activeFileIndex === i) setActiveFileIndex(next.length > 0 ? 0 : -1);
-                  else if (activeFileIndex > i) setActiveFileIndex(activeFileIndex - 1);
-                  return next;
-                });
+              <button
+                className="text-muted-foreground hover:text-foreground rounded-full p-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-1"
+                aria-label={`Close ${f.name}`}
+                title={`Close ${f.name}`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setFiles(prev => {
+                    const next = [...prev];
+                    next.splice(i, 1);
+                    if (activeFileIndex === i) setActiveFileIndex(next.length > 0 ? 0 : -1);
+                    else if (activeFileIndex > i) setActiveFileIndex(activeFileIndex - 1);
+                    return next;
+                  });
               }}>✕</button>
             </div>
           ))}
@@ -364,8 +368,14 @@ export default function App() {
             </div>
           </div>
         ) : (
-          <div className="flex-1 flex items-center justify-center text-muted-foreground">
-            No file opened. Use the sidebar to open or drag & drop a markdown file.
+          <div className="flex-1 flex flex-col items-center justify-center text-muted-foreground gap-4">
+            <div className="flex flex-col items-center gap-2">
+              <FileIcon className="w-12 h-12 opacity-20" />
+              <p>No file opened. Drag & drop a markdown file or open one to start editing.</p>
+            </div>
+            <Button onClick={handleOpenFiles} className="flex gap-2">
+              <FileUp className="w-4 h-4" /> Open File
+            </Button>
           </div>
         )}
       </div>
